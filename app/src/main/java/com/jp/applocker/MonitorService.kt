@@ -1,7 +1,9 @@
 package com.jp.applocker
 
+import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.app.Service
 import android.app.usage.UsageEvents
 import android.app.usage.UsageStatsManager
@@ -12,7 +14,6 @@ import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
 import android.os.PowerManager
-import java.util.Calendar
 
 class MonitorService : Service() {
     private val h = Handler(Looper.getMainLooper())
@@ -33,19 +34,24 @@ class MonitorService : Service() {
         super.onCreate()
         val nm = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         nm.createNotificationChannel(NotificationChannel("lock", "App Locker", NotificationManager.IMPORTANCE_LOW))
-        val n = Notification_(this)
+        val n = buildNotification()
         if (Build.VERSION.SDK_INT >= 34) startForeground(1, n, ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
         else startForeground(1, n)
         lastQuery = System.currentTimeMillis() - 600000
         h.post(loop)
     }
 
-    @Suppress("FunctionName")
-    private fun Notification_(c: android.content.Context) =
-        android.app.Notification.Builder(c, "lock")
+    private fun buildNotification(): Notification {
+        val open = PendingIntent.getActivity(this, 0, Intent(this, MainActivity::class.java), PendingIntent.FLAG_IMMUTABLE)
+        val n = Store.rules(this).size
+        return Notification.Builder(this, "lock")
             .setSmallIcon(android.R.drawable.ic_lock_lock)
-            .setContentTitle("App Locker is running")
+            .setContentTitle("App Locker is active")
+            .setContentText("Watching $n ${if (n == 1) "app" else "apps"}")
+            .setContentIntent(open)
+            .setOngoing(true)
             .build()
+    }
 
     override fun onStartCommand(i: Intent?, f: Int, s: Int) = START_STICKY
     override fun onBind(i: Intent?): IBinder? = null
@@ -77,14 +83,12 @@ class MonitorService : Service() {
         if (++tick % 15 == 0) flush()
 
         if (Store.grantUntil(this, pkg) > now) return
-        val cal = Calendar.getInstance()
-        val m = cal.get(Calendar.HOUR_OF_DAY) * 60 + cal.get(Calendar.MINUTE)
-        val inWin = rule.from >= 0 && rule.to >= 0 && rule.from != rule.to &&
-            (if (rule.from < rule.to) m >= rule.from && m < rule.to else m >= rule.from || m < rule.to)
-        val over = rule.limitMin > 0 && u >= rule.limitMin * 60
+        val inWin = rule.windowActive()
+        val over = rule.hasLimit && u >= rule.limitMin * 60
         if ((inWin || over) && !LockActivity.showing) {
+            val reason = if (inWin) "Blocked until ${fmtTime(rule.to)}" else "Daily limit reached · ${fmtDuration(rule.limitMin)}"
             startActivity(
-                Intent(this, LockActivity::class.java).putExtra("pkg", pkg)
+                Intent(this, LockActivity::class.java).putExtra("pkg", pkg).putExtra("reason", reason)
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
             )
         }
