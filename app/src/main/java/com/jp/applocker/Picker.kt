@@ -1,5 +1,8 @@
 package com.jp.applocker
 
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.pluralStringResource
+
 import android.content.Context
 import android.content.Intent
 import androidx.compose.foundation.clickable
@@ -53,14 +56,14 @@ fun AppPicker(locked: Set<String>, onBack: () -> Unit, onPick: (String) -> Unit)
                 Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal = 8.dp, vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                IconButton(onClick = onBack) { Icon(Icons.Rounded.ArrowBack, "Back") }
+                IconButton(onClick = onBack) { Icon(Icons.Rounded.ArrowBack, stringResource(R.string.back)) }
                 TextField(
                     value = query, onValueChange = { query = it },
                     modifier = Modifier.weight(1f), singleLine = true,
-                    placeholder = { Text("Search apps") },
+                    placeholder = { Text(stringResource(R.string.search_apps)) },
                     leadingIcon = { Icon(Icons.Rounded.Search, null) },
                     trailingIcon = {
-                        if (query.isNotEmpty()) IconButton(onClick = { query = "" }) { Icon(Icons.Rounded.Close, "Clear") }
+                        if (query.isNotEmpty()) IconButton(onClick = { query = "" }) { Icon(Icons.Rounded.Close, stringResource(R.string.clear)) }
                     },
                     shape = RoundedCornerShape(28.dp),
                     colors = TextFieldDefaults.colors(
@@ -89,7 +92,7 @@ fun AppPicker(locked: Set<String>, onBack: () -> Unit, onPick: (String) -> Unit)
                                 Text(a.label, style = MaterialTheme.typography.bodyLarge, maxLines = 1, overflow = TextOverflow.Ellipsis)
                                 Text(a.pkg, style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.Ellipsis)
                             }
-                            if (a.pkg in locked) Icon(Icons.Rounded.CheckCircle, "Already locked", tint = cs.primary)
+                            if (a.pkg in locked) Icon(Icons.Rounded.CheckCircle, stringResource(R.string.already_locked), tint = cs.primary)
                         }
                     }
                 }

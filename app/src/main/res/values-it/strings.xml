@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Locker</string>
+    <string name="app_tagline">Attrito per le app che mangiano il tuo tempo.</string>
+    <string name="version_footer">App Locker 2.0 · i limiti si azzerano a mezzanotte</string>
+
+    <string name="nav_locked_apps">App bloccate</string>
+    <string name="nav_settings">Impostazioni</string>
+    <string name="add_app">Aggiungi app</string>
+    <string name="back">Indietro</string>
+    <string name="clear">Cancella</string>
+    <string name="save">Salva</string>
+    <string name="cancel">Annulla</string>
+    <string name="ok">OK</string>
+    <string name="grant">Consenti</string>
+    <string name="check">Controlla</string>
+    <string name="go_back">Torna indietro</string>
+
+    <string name="protection_on">Protezione attiva</string>
+    <string name="protection_off">Protezione disattivata</string>
+    <string name="turn_on_limits">Attiva per applicare i tuoi limiti</string>
+    <string name="grant_permissions_first">Concedi prima i permessi necessari</string>
+    <plurals name="watching_apps">
+        <item quantity="one">Monitoraggio di %d app</item>
+        <item quantity="other">Monitoraggio di %d app</item>
+    </plurals>
+
+    <string name="setup_needed">Configurazione necessaria</string>
+    <string name="perm_usage">Accesso all\'utilizzo</string>
+    <string name="perm_usage_desc">Permette di vedere quale app è aperta</string>
+    <string name="perm_usage_desc_settings">Vedere quale app è in primo piano</string>
+    <string name="perm_overlay">Visualizza sopra altre app</string>
+    <string name="perm_overlay_desc">Necessario per mostrare la schermata di blocco</string>
+    <string name="perm_overlay_desc_settings">Mostrare la schermata di blocco sopra</string>
+    <string name="perm_notifications">Notifiche</string>
+    <string name="perm_notifications_desc">Mostra lo stato di esecuzione</string>
+    <string name="perm_notifications_desc_settings">Mostrare lo stato di esecuzione</string>
+    <string name="perm_battery">Batteria senza restrizioni</string>
+    <string name="perm_battery_desc">Impedisce che la protezione venga interrotta</string>
+    <string name="permissions_section">Permessi</string>
+
+    <string name="no_locked_apps">Nessuna app bloccata ancora</string>
+    <string name="no_locked_apps_hint">Tocca Aggiungi app per sceglierne una e impostare un limite giornaliero o un orario.</string>
+
+    <string name="status_unlocked">Sbloccata · %d min rimasti</string>
+    <string name="status_locked_now">Bloccata ora</string>
+    <string name="status_active">Attiva</string>
+    <string name="limit_per_day">%1$s / giorno</string>
+    <string name="used_today">%1$d di %2$s usati oggi</string>
+
+    <string name="settings">Impostazioni</string>
+    <string name="unlock_challenge">Sfida di sblocco</string>
+    <string name="unlock_challenge_desc">Per aprire un\'app bloccata risolvi un numero casuale di puzzle, da 1 fino al tuo massimo.</string>
+    <string name="max_puzzles">Massimo di puzzle</string>
+    <string name="up_to_n">fino a %d</string>
+    <string name="stays_unlocked_for">Resta sbloccata per</string>
+    <string name="puzzle_types">Tipi di puzzle</string>
+    <string name="try_a_puzzle">Prova un puzzle</string>
+    <string name="practice_run">Prova</string>
+
+    <string name="puzzle_sort">Ordina</string>
+    <string name="puzzle_drag_drop">Trascina e rilascia</string>
+    <string name="puzzle_math">Matematica</string>
+    <string name="puzzle_tap_order">Ordine di tocchi</string>
+    <string name="puzzle_code">Codice</string>
+
+    <string name="new_rule">Nuova regola</string>
+    <string name="edit_rule">Modifica regola</string>
+    <string name="remove">Rimuovi</string>
+    <string name="daily_limit">Limite giornaliero</string>
+    <string name="daily_limit_desc">Blocca dopo un tempo impostato ogni giorno</string>
+    <string name="block_by_schedule">Blocca per orario</string>
+    <string name="block_by_schedule_desc">Blocca durante certe ore</string>
+    <string name="from">Da</string>
+    <string name="until">Fino a</string>
+    <string name="on_days">Nei giorni</string>
+    <string name="block_from">Blocca da</string>
+    <string name="block_until">Blocca fino a</string>
+    <string name="pick_different_times">Scegli orari di inizio e fine diversi.</string>
+    <string name="choose_at_least_one_day">Scegli almeno un giorno.</string>
+    <string name="blocked_overnight">Bloccata da %1$s a %2$s la mattina dopo · %3$s</string>
+    <string name="blocked_range">Bloccata da %1$s a %2$s · %3$s</string>
+
+    <string name="day_mon">Lun</string>
+    <string name="day_tue">Mar</string>
+    <string name="day_wed">Mer</string>
+    <string name="day_thu">Gio</string>
+    <string name="day_fri">Ven</string>
+    <string name="day_sat">Sab</string>
+    <string name="day_sun">Dom</string>
+    <string name="day_letter_m">L</string>
+    <string name="day_letter_t">M</string>
+    <string name="day_letter_w">M</string>
+    <string name="day_letter_f">V</string>
+    <string name="day_letter_s">S</string>
+    <string name="every_day">Ogni giorno</string>
+    <string name="weekdays">Giorni feriali</string>
+    <string name="weekends">Weekend</string>
+
+    <string name="min_short">%d min</string>
+    <string name="hour_short">%d h</string>
+    <string name="hour_min_short">%1$d h %2$d min</string>
+
+    <string name="search_apps">Cerca app</string>
+    <string name="no_apps_match">Nessuna app corrisponde a \"%s\"</string>
+    <string name="already_locked">Già bloccata</string>
+
+    <string name="is_locked">%s è bloccata</string>
+    <string name="solve_puzzles_one">Risolvi 1 puzzle per continuare</string>
+    <string name="solve_puzzles_many">Risolvi %d puzzle per continuare</string>
+    <string name="puzzle_of">Puzzle %1$d di %2$d</string>
+
+    <string name="prompt_sort">Trascina le tessere in ordine, dalla più piccola alla più grande</string>
+    <string name="prompt_drop">Trascina il numero %d nella casella</string>
+    <string name="drop_here">Rilascia qui</string>
+    <string name="not_that_one">Non quello</string>
+    <string name="prompt_math">Risolvi</string>
+    <string name="prompt_code">Digita questo codice</string>
+    <string name="prompt_tap">Tocca i numeri da 1 a 6 in ordine</string>
+    <string name="wrong_order">Ordine sbagliato, ricomincia</string>
+    <string name="not_quite">Non proprio, riprova</string>
+
+    <string name="reason_blocked_until">Bloccata fino alle %s</string>
+    <string name="reason_daily_limit">Limite giornaliero raggiunto · %s</string>
+
+    <string name="notif_channel">App Locker</string>
+    <string name="notif_title">App Locker è attivo</string>
+    <plurals name="notif_watching">
+        <item quantity="one">Monitoraggio di %d app</item>
+        <item quantity="other">Monitoraggio di %d app</item>
+    </plurals>
+</resources>

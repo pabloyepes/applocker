@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Locker</string>
+    <string name="app_tagline">時間を奪うアプリに摩擦を。</string>
+    <string name="version_footer">App Locker 2.0 · 制限は深夜0時にリセット</string>
+
+    <string name="nav_locked_apps">ロック中のアプリ</string>
+    <string name="nav_settings">設定</string>
+    <string name="add_app">アプリを追加</string>
+    <string name="back">戻る</string>
+    <string name="clear">クリア</string>
+    <string name="save">保存</string>
+    <string name="cancel">キャンセル</string>
+    <string name="ok">OK</string>
+    <string name="grant">許可</string>
+    <string name="check">確認</string>
+    <string name="go_back">戻る</string>
+
+    <string name="protection_on">保護オン</string>
+    <string name="protection_off">保護オフ</string>
+    <string name="turn_on_limits">オンにして制限を適用</string>
+    <string name="grant_permissions_first">先に必要な権限を許可してください</string>
+    <plurals name="watching_apps">
+        <item quantity="other">%d個のアプリを監視中</item>
+    </plurals>
+
+    <string name="setup_needed">設定が必要です</string>
+    <string name="perm_usage">使用状況へのアクセス</string>
+    <string name="perm_usage_desc">どのアプリが開いているか確認できます</string>
+    <string name="perm_usage_desc_settings">フォアグラウンドのアプリを確認</string>
+    <string name="perm_overlay">他のアプリの上に表示</string>
+    <string name="perm_overlay_desc">ロック画面を表示するために必要</string>
+    <string name="perm_overlay_desc_settings">ロック画面を上に表示</string>
+    <string name="perm_notifications">通知</string>
+    <string name="perm_notifications_desc">実行状態を表示します</string>
+    <string name="perm_notifications_desc_settings">実行状態を表示</string>
+    <string name="perm_battery">バッテリー制限なし</string>
+    <string name="perm_battery_desc">保護が停止されるのを防ぎます</string>
+    <string name="permissions_section">権限</string>
+
+    <string name="no_locked_apps">まだロックされたアプリはありません</string>
+    <string name="no_locked_apps_hint">「アプリを追加」をタップして、1日の制限やスケジュールを設定しましょう。</string>
+
+    <string name="status_unlocked">解除中 · 残り%d分</string>
+    <string name="status_locked_now">現在ロック中</string>
+    <string name="status_active">有効</string>
+    <string name="limit_per_day">%1$s / 日</string>
+    <string name="used_today">今日 %1$d / %2$s 使用</string>
+
+    <string name="settings">設定</string>
+    <string name="unlock_challenge">解除チャレンジ</string>
+    <string name="unlock_challenge_desc">ロックされたアプリを開くには、1から最大数までのランダムな数のパズルを解きます。</string>
+    <string name="max_puzzles">最大パズル数</string>
+    <string name="up_to_n">最大 %d</string>
+    <string name="stays_unlocked_for">解除状態の継続時間</string>
+    <string name="puzzle_types">パズルの種類</string>
+    <string name="try_a_puzzle">パズルを試す</string>
+    <string name="practice_run">練習</string>
+
+    <string name="puzzle_sort">並べ替え</string>
+    <string name="puzzle_drag_drop">ドラッグ＆ドロップ</string>
+    <string name="puzzle_math">計算</string>
+    <string name="puzzle_tap_order">タップ順</string>
+    <string name="puzzle_code">コード</string>
+
+    <string name="new_rule">新しいルール</string>
+    <string name="edit_rule">ルールを編集</string>
+    <string name="remove">削除</string>
+    <string name="daily_limit">1日の制限</string>
+    <string name="daily_limit_desc">毎日一定時間後にロック</string>
+    <string name="block_by_schedule">時間帯でブロック</string>
+    <string name="block_by_schedule_desc">特定の時間帯にロック</string>
+    <string name="from">開始</string>
+    <string name="until">終了</string>
+    <string name="on_days">曜日</string>
+    <string name="block_from">ブロック開始</string>
+    <string name="block_until">ブロック終了</string>
+    <string name="pick_different_times">開始と終了の時刻を別にしてください。</string>
+    <string name="choose_at_least_one_day">少なくとも1日を選んでください。</string>
+    <string name="blocked_overnight">%1$s から翌朝 %2$s までブロック · %3$s</string>
+    <string name="blocked_range">%1$s から %2$s までブロック · %3$s</string>
+
+    <string name="day_mon">月</string>
+    <string name="day_tue">火</string>
+    <string name="day_wed">水</string>
+    <string name="day_thu">木</string>
+    <string name="day_fri">金</string>
+    <string name="day_sat">土</string>
+    <string name="day_sun">日</string>
+    <string name="day_letter_m">月</string>
+    <string name="day_letter_t">火</string>
+    <string name="day_letter_w">水</string>
+    <string name="day_letter_f">金</string>
+    <string name="day_letter_s">土</string>
+    <string name="every_day">毎日</string>
+    <string name="weekdays">平日</string>
+    <string name="weekends">週末</string>
+
+    <string name="min_short">%d分</string>
+    <string name="hour_short">%d時間</string>
+    <string name="hour_min_short">%1$d時間%2$d分</string>
+
+    <string name="search_apps">アプリを検索</string>
+    <string name="no_apps_match">「%s」に一致するアプリはありません</string>
+    <string name="already_locked">すでにロック済み</string>
+
+    <string name="is_locked">%s はロックされています</string>
+    <string name="solve_puzzles_one">続けるにはパズルを1つ解いてください</string>
+    <string name="solve_puzzles_many">続けるにはパズルを%d個解いてください</string>
+    <string name="puzzle_of">パズル %1$d / %2$d</string>
+
+    <string name="prompt_sort">タイルを小さい順に並べてください</string>
+    <string name="prompt_drop">数字 %d をボックスにドラッグしてください</string>
+    <string name="drop_here">ここにドロップ</string>
+    <string name="not_that_one">違います</string>
+    <string name="prompt_math">解いてください</string>
+    <string name="prompt_code">このコードを入力</string>
+    <string name="prompt_tap">1から6の数字を順番にタップ</string>
+    <string name="wrong_order">順番が違います。最初から</string>
+    <string name="not_quite">違います。もう一度</string>
+
+    <string name="reason_blocked_until">%s までブロック中</string>
+    <string name="reason_daily_limit">1日の制限に達しました · %s</string>
+
+    <string name="notif_channel">App Locker</string>
+    <string name="notif_title">App Locker が動作中</string>
+    <plurals name="notif_watching">
+        <item quantity="other">%d個のアプリを監視中</item>
+    </plurals>
+</resources>

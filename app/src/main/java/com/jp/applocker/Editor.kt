@@ -2,6 +2,9 @@
 
 package com.jp.applocker
 
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.pluralStringResource
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -43,10 +46,10 @@ fun RuleEditor(pkg: String, existing: Rule?, onBack: () -> Unit, onSave: (Rule) 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(if (existing == null) "New rule" else "Edit rule") },
-                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.Rounded.ArrowBack, "Back") } },
+                title = { Text(if (existing == null) stringResource(R.string.new_rule) else stringResource(R.string.edit_rule)) },
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.Rounded.ArrowBack, stringResource(R.string.back)) } },
                 actions = {
-                    if (existing != null) IconButton(onClick = onDelete) { Icon(Icons.Rounded.Delete, "Remove") }
+                    if (existing != null) IconButton(onClick = onDelete) { Icon(Icons.Rounded.Delete, stringResource(R.string.remove)) }
                 }
             )
         },
@@ -65,7 +68,7 @@ fun RuleEditor(pkg: String, existing: Rule?, onBack: () -> Unit, onSave: (Rule) 
                 },
                 enabled = valid,
                 modifier = Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 20.dp, vertical = 12.dp).height(52.dp)
-            ) { Text("Save", style = MaterialTheme.typography.titleMedium) }
+            ) { Text(stringResource(R.string.save), style = MaterialTheme.typography.titleMedium) }
         }
     ) { pad ->
         Column(
@@ -81,9 +84,9 @@ fun RuleEditor(pkg: String, existing: Rule?, onBack: () -> Unit, onSave: (Rule) 
                 }
             }
 
-            SectionCard("Daily limit") {
+            SectionCard(stringResource(R.string.daily_limit)) {
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                    Text("Lock after a set time each day", Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
+                    Text(stringResource(R.string.daily_limit_desc), Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
                     Switch(checked = limitOn, onCheckedChange = { limitOn = it })
                 }
                 if (limitOn) {
@@ -101,17 +104,17 @@ fun RuleEditor(pkg: String, existing: Rule?, onBack: () -> Unit, onSave: (Rule) 
                 }
             }
 
-            SectionCard("Block by schedule") {
+            SectionCard(stringResource(R.string.block_by_schedule)) {
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                    Text("Lock during certain hours", Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
+                    Text(stringResource(R.string.block_by_schedule_desc), Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
                     Switch(checked = winOn, onCheckedChange = { winOn = it })
                 }
                 if (winOn) {
                     Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                        TimeBox("From", from, Modifier.weight(1f)) { picking = 1 }
-                        TimeBox("Until", to, Modifier.weight(1f)) { picking = 2 }
+                        TimeBox(stringResource(R.string.from), from, Modifier.weight(1f)) { picking = 1 }
+                        TimeBox(stringResource(R.string.until), to, Modifier.weight(1f)) { picking = 2 }
                     }
-                    Text("On days", style = MaterialTheme.typography.titleSmall)
+                    Text(stringResource(R.string.on_days), style = MaterialTheme.typography.titleSmall)
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                         DAY_LETTERS.forEachIndexed { i, l ->
                             val sel = (days and (1 shl i)) != 0
@@ -126,8 +129,8 @@ fun RuleEditor(pkg: String, existing: Rule?, onBack: () -> Unit, onSave: (Rule) 
                         }
                     }
                     val note = when {
-                        from == to -> "Pick different start and end times."
-                        days == 0 -> "Choose at least one day."
+                        from == to -> stringResource(R.string.pick_different_times)
+                        days == 0 -> stringResource(R.string.choose_at_least_one_day)
                         from > to -> "Blocked ${fmtTime(from)} to ${fmtTime(to)} next morning · ${daysLabel(days)}"
                         else -> "Blocked ${fmtTime(from)} to ${fmtTime(to)} · ${daysLabel(days)}"
                     }
@@ -148,18 +151,18 @@ fun RuleEditor(pkg: String, existing: Rule?, onBack: () -> Unit, onSave: (Rule) 
             ) {
                 Column(Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
-                        if (picking == 1) "Block from" else "Block until",
+                        if (picking == 1) stringResource(R.string.block_from) else stringResource(R.string.block_until),
                         Modifier.fillMaxWidth().padding(bottom = 20.dp), style = MaterialTheme.typography.labelMedium
                     )
                     TimePicker(state = st)
                     Row(Modifier.fillMaxWidth().padding(top = 12.dp)) {
                         Spacer(Modifier.weight(1f))
-                        TextButton(onClick = { picking = 0 }) { Text("Cancel") }
+                        TextButton(onClick = { picking = 0 }) { Text(stringResource(R.string.cancel)) }
                         TextButton(onClick = {
                             val v = st.hour * 60 + st.minute
                             if (picking == 1) from = v else to = v
                             picking = 0
-                        }) { Text("OK") }
+                        }) { Text(stringResource(R.string.ok)) }
                     }
                 }
             }

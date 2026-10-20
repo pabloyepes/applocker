@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Locker</string>
+    <string name="app_tagline">시간을 잡아먹는 앱에 마찰을.</string>
+    <string name="version_footer">App Locker 2.0 · 제한은 자정에 초기화됩니다</string>
+
+    <string name="nav_locked_apps">잠긴 앱</string>
+    <string name="nav_settings">설정</string>
+    <string name="add_app">앱 추가</string>
+    <string name="back">뒤로</string>
+    <string name="clear">지우기</string>
+    <string name="save">저장</string>
+    <string name="cancel">취소</string>
+    <string name="ok">확인</string>
+    <string name="grant">허용</string>
+    <string name="check">확인</string>
+    <string name="go_back">돌아가기</string>
+
+    <string name="protection_on">보호 켜짐</string>
+    <string name="protection_off">보호 꺼짐</string>
+    <string name="turn_on_limits">켜서 제한을 적용하세요</string>
+    <string name="grant_permissions_first">먼저 필요한 권한을 허용하세요</string>
+    <plurals name="watching_apps">
+        <item quantity="other">%d개 앱 감시 중</item>
+    </plurals>
+
+    <string name="setup_needed">설정 필요</string>
+    <string name="perm_usage">사용 기록 접근</string>
+    <string name="perm_usage_desc">어떤 앱이 열려 있는지 볼 수 있습니다</string>
+    <string name="perm_usage_desc_settings">포그라운드 앱 확인</string>
+    <string name="perm_overlay">다른 앱 위에 표시</string>
+    <string name="perm_overlay_desc">잠금 화면을 표시하는 데 필요합니다</string>
+    <string name="perm_overlay_desc_settings">잠금 화면을 위에 표시</string>
+    <string name="perm_notifications">알림</string>
+    <string name="perm_notifications_desc">실행 상태를 표시합니다</string>
+    <string name="perm_notifications_desc_settings">실행 상태 표시</string>
+    <string name="perm_battery">배터리 제한 없음</string>
+    <string name="perm_battery_desc">보호가 종료되는 것을 막습니다</string>
+    <string name="permissions_section">권한</string>
+
+    <string name="no_locked_apps">아직 잠긴 앱이 없습니다</string>
+    <string name="no_locked_apps_hint">\'앱 추가\'를 눌러 앱을 선택하고 일일 제한이나 일정을 설정하세요.</string>
+
+    <string name="status_unlocked">잠금 해제 · %d분 남음</string>
+    <string name="status_locked_now">지금 잠김</string>
+    <string name="status_active">활성</string>
+    <string name="limit_per_day">%1$s / 일</string>
+    <string name="used_today">오늘 %1$d / %2$s 사용</string>
+
+    <string name="settings">설정</string>
+    <string name="unlock_challenge">잠금 해제 도전</string>
+    <string name="unlock_challenge_desc">잠긴 앱을 열려면 1부터 최대 개수까지 랜덤한 수의 퍼즐을 풉니다.</string>
+    <string name="max_puzzles">최대 퍼즐 수</string>
+    <string name="up_to_n">최대 %d개</string>
+    <string name="stays_unlocked_for">잠금 해제 유지 시간</string>
+    <string name="puzzle_types">퍼즐 종류</string>
+    <string name="try_a_puzzle">퍼즐 해보기</string>
+    <string name="practice_run">연습</string>
+
+    <string name="puzzle_sort">정렬</string>
+    <string name="puzzle_drag_drop">드래그 앤 드롭</string>
+    <string name="puzzle_math">수학</string>
+    <string name="puzzle_tap_order">탭 순서</string>
+    <string name="puzzle_code">코드</string>
+
+    <string name="new_rule">새 규칙</string>
+    <string name="edit_rule">규칙 편집</string>
+    <string name="remove">삭제</string>
+    <string name="daily_limit">일일 제한</string>
+    <string name="daily_limit_desc">매일 일정 시간 후 잠금</string>
+    <string name="block_by_schedule">시간표로 차단</string>
+    <string name="block_by_schedule_desc">특정 시간에 잠금</string>
+    <string name="from">시작</string>
+    <string name="until">종료</string>
+    <string name="on_days">요일</string>
+    <string name="block_from">차단 시작</string>
+    <string name="block_until">차단 종료</string>
+    <string name="pick_different_times">시작과 종료 시간을 다르게 선택하세요.</string>
+    <string name="choose_at_least_one_day">최소 하루를 선택하세요.</string>
+    <string name="blocked_overnight">%1$s부터 다음날 아침 %2$s까지 차단 · %3$s</string>
+    <string name="blocked_range">%1$s부터 %2$s까지 차단 · %3$s</string>
+
+    <string name="day_mon">월</string>
+    <string name="day_tue">화</string>
+    <string name="day_wed">수</string>
+    <string name="day_thu">목</string>
+    <string name="day_fri">금</string>
+    <string name="day_sat">토</string>
+    <string name="day_sun">일</string>
+    <string name="day_letter_m">월</string>
+    <string name="day_letter_t">화</string>
+    <string name="day_letter_w">수</string>
+    <string name="day_letter_f">금</string>
+    <string name="day_letter_s">토</string>
+    <string name="every_day">매일</string>
+    <string name="weekdays">평일</string>
+    <string name="weekends">주말</string>
+
+    <string name="min_short">%d분</string>
+    <string name="hour_short">%d시간</string>
+    <string name="hour_min_short">%1$d시간 %2$d분</string>
+
+    <string name="search_apps">앱 검색</string>
+    <string name="no_apps_match">\'%s\'와 일치하는 앱이 없습니다</string>
+    <string name="already_locked">이미 잠김</string>
+
+    <string name="is_locked">%s이(가) 잠겼습니다</string>
+    <string name="solve_puzzles_one">계속하려면 퍼즐 1개를 푸세요</string>
+    <string name="solve_puzzles_many">계속하려면 퍼즐 %d개를 푸세요</string>
+    <string name="puzzle_of">퍼즐 %1$d / %2$d</string>
+
+    <string name="prompt_sort">타일을 작은 것부터 큰 순서로 드래그하세요</string>
+    <string name="prompt_drop">숫자 %d을(를) 상자로 드래그하세요</string>
+    <string name="drop_here">여기에 놓기</string>
+    <string name="not_that_one">그게 아닙니다</string>
+    <string name="prompt_math">푸세요</string>
+    <string name="prompt_code">이 코드를 입력하세요</string>
+    <string name="prompt_tap">1부터 6까지 순서대로 탭하세요</string>
+    <string name="wrong_order">순서가 틀렸습니다. 다시 시작</string>
+    <string name="not_quite">틀렸습니다. 다시 시도하세요</string>
+
+    <string name="reason_blocked_until">%s까지 차단됨</string>
+    <string name="reason_daily_limit">일일 제한 도달 · %s</string>
+
+    <string name="notif_channel">App Locker</string>
+    <string name="notif_title">App Locker 실행 중</string>
+    <plurals name="notif_watching">
+        <item quantity="other">%d개 앱 감시 중</item>
+    </plurals>
+</resources>

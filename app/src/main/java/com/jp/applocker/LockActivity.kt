@@ -1,5 +1,8 @@
 package com.jp.applocker
 
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.pluralStringResource
+
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -124,7 +127,7 @@ fun LockScreen(pkg: String, reason: String, total: Int, onSolved: () -> Unit, on
                 }
             }
             Spacer(Modifier.height(24.dp))
-            TextButton(onClick = onExit) { Text("Go back") }
+            TextButton(onClick = onExit) { Text(stringResource(R.string.go_back)) }
         }
     }
 }

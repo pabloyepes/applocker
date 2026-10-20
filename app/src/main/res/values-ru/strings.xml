@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Locker</string>
+    <string name="app_tagline">Трение для приложений, которые съедают ваше время.</string>
+    <string name="version_footer">App Locker 2.0 · лимиты сбрасываются в полночь</string>
+
+    <string name="nav_locked_apps">Заблокированные</string>
+    <string name="nav_settings">Настройки</string>
+    <string name="add_app">Добавить</string>
+    <string name="back">Назад</string>
+    <string name="clear">Очистить</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="ok">OK</string>
+    <string name="grant">Разрешить</string>
+    <string name="check">Проверить</string>
+    <string name="go_back">Назад</string>
+
+    <string name="protection_on">Защита включена</string>
+    <string name="protection_off">Защита выключена</string>
+    <string name="turn_on_limits">Включите, чтобы применять лимиты</string>
+    <string name="grant_permissions_first">Сначала предоставьте необходимые разрешения</string>
+    <plurals name="watching_apps">
+        <item quantity="one">Слежу за %d приложением</item>
+        <item quantity="few">Слежу за %d приложениями</item>
+        <item quantity="many">Слежу за %d приложениями</item>
+        <item quantity="other">Слежу за %d приложениями</item>
+    </plurals>
+
+    <string name="setup_needed">Требуется настройка</string>
+    <string name="perm_usage">Доступ к данным об использовании</string>
+    <string name="perm_usage_desc">Позволяет видеть, какое приложение открыто</string>
+    <string name="perm_usage_desc_settings">Видеть, какое приложение на переднем плане</string>
+    <string name="perm_overlay">Отображение поверх других приложений</string>
+    <string name="perm_overlay_desc">Нужно для показа экрана блокировки</string>
+    <string name="perm_overlay_desc_settings">Показывать экран блокировки поверх</string>
+    <string name="perm_notifications">Уведомления</string>
+    <string name="perm_notifications_desc">Показывает статус работы</string>
+    <string name="perm_notifications_desc_settings">Показывать статус работы</string>
+    <string name="perm_battery">Неограниченная батарея</string>
+    <string name="perm_battery_desc">Не даёт системе убить защиту</string>
+    <string name="permissions_section">Разрешения</string>
+
+    <string name="no_locked_apps">Пока нет заблокированных приложений</string>
+    <string name="no_locked_apps_hint">Нажмите «Добавить», чтобы выбрать приложение и задать дневной лимит или расписание.</string>
+
+    <string name="status_unlocked">Разблокировано · осталось %d мин</string>
+    <string name="status_locked_now">Заблокировано сейчас</string>
+    <string name="status_active">Активно</string>
+    <string name="limit_per_day">%1$s / день</string>
+    <string name="used_today">%1$d из %2$s сегодня</string>
+
+    <string name="settings">Настройки</string>
+    <string name="unlock_challenge">Испытание при разблокировке</string>
+    <string name="unlock_challenge_desc">Чтобы открыть заблокированное приложение, вы решаете случайное количество головоломок — от 1 до вашего максимума.</string>
+    <string name="max_puzzles">Максимум головоломок</string>
+    <string name="up_to_n">до %d</string>
+    <string name="stays_unlocked_for">Остаётся разблокированным</string>
+    <string name="puzzle_types">Типы головоломок</string>
+    <string name="try_a_puzzle">Попробовать головоломку</string>
+    <string name="practice_run">Тренировка</string>
+
+    <string name="puzzle_sort">Сортировка</string>
+    <string name="puzzle_drag_drop">Перетаскивание</string>
+    <string name="puzzle_math">Математика</string>
+    <string name="puzzle_tap_order">Порядок нажатий</string>
+    <string name="puzzle_code">Код</string>
+
+    <string name="new_rule">Новое правило</string>
+    <string name="edit_rule">Редактировать правило</string>
+    <string name="remove">Удалить</string>
+    <string name="daily_limit">Дневной лимит</string>
+    <string name="daily_limit_desc">Блокировать после определённого времени каждый день</string>
+    <string name="block_by_schedule">Блокировка по расписанию</string>
+    <string name="block_by_schedule_desc">Блокировать в определённые часы</string>
+    <string name="from">С</string>
+    <string name="until">До</string>
+    <string name="on_days">В дни</string>
+    <string name="block_from">Блокировать с</string>
+    <string name="block_until">Блокировать до</string>
+    <string name="pick_different_times">Выберите разное время начала и конца.</string>
+    <string name="choose_at_least_one_day">Выберите хотя бы один день.</string>
+    <string name="blocked_overnight">Заблокировано с %1$s до %2$s следующего утра · %3$s</string>
+    <string name="blocked_range">Заблокировано с %1$s до %2$s · %3$s</string>
+
+    <string name="day_mon">Пн</string>
+    <string name="day_tue">Вт</string>
+    <string name="day_wed">Ср</string>
+    <string name="day_thu">Чт</string>
+    <string name="day_fri">Пт</string>
+    <string name="day_sat">Сб</string>
+    <string name="day_sun">Вс</string>
+    <string name="day_letter_m">П</string>
+    <string name="day_letter_t">В</string>
+    <string name="day_letter_w">С</string>
+    <string name="day_letter_f">П</string>
+    <string name="day_letter_s">С</string>
+    <string name="every_day">Каждый день</string>
+    <string name="weekdays">Будние дни</string>
+    <string name="weekends">Выходные</string>
+
+    <string name="min_short">%d мин</string>
+    <string name="hour_short">%d ч</string>
+    <string name="hour_min_short">%1$d ч %2$d мин</string>
+
+    <string name="search_apps">Поиск приложений</string>
+    <string name="no_apps_match">Нет приложений по запросу «%s»</string>
+    <string name="already_locked">Уже заблокировано</string>
+
+    <string name="is_locked">%s заблокировано</string>
+    <string name="solve_puzzles_one">Решите 1 головоломку, чтобы продолжить</string>
+    <string name="solve_puzzles_many">Решите %d головоломок, чтобы продолжить</string>
+    <string name="puzzle_of">Головоломка %1$d из %2$d</string>
+
+    <string name="prompt_sort">Перетащите плитки по порядку, от меньшей к большей</string>
+    <string name="prompt_drop">Перетащите число %d в поле</string>
+    <string name="drop_here">Отпустите здесь</string>
+    <string name="not_that_one">Не то</string>
+    <string name="prompt_math">Решите</string>
+    <string name="prompt_code">Введите этот код</string>
+    <string name="prompt_tap">Нажимайте числа от 1 до 6 по порядку</string>
+    <string name="wrong_order">Неверный порядок, начните снова</string>
+    <string name="not_quite">Неверно, попробуйте ещё раз</string>
+
+    <string name="reason_blocked_until">Заблокировано до %s</string>
+    <string name="reason_daily_limit">Дневной лимит достигнут · %s</string>
+
+    <string name="notif_channel">App Locker</string>
+    <string name="notif_title">App Locker активен</string>
+    <plurals name="notif_watching">
+        <item quantity="one">Слежу за %d приложением</item>
+        <item quantity="few">Слежу за %d приложениями</item>
+        <item quantity="many">Слежу за %d приложениями</item>
+        <item quantity="other">Слежу за %d приложениями</item>
+    </plurals>
+</resources>

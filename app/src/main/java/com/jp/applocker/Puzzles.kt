@@ -1,5 +1,8 @@
 package com.jp.applocker
 
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.pluralStringResource
+
 import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -71,7 +74,7 @@ fun SortPuzzle(onDone: () -> Unit) {
     var solved by remember { mutableStateOf(false) }
 
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(20.dp)) {
-        Prompt("Drag the tiles into order, smallest to largest")
+        Prompt(stringResource(R.string.prompt_sort))
         Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
             items.toList().forEach { v ->
                 key(v) {
@@ -130,13 +133,13 @@ fun DropPuzzle(onDone: () -> Unit) {
                 .border(2.dp, if (msg != null) cs.error else cs.primary, RoundedCornerShape(22.dp)),
             contentAlignment = Alignment.Center
         ) {
-            Text(msg ?: "Drop here", color = if (msg != null) cs.error else cs.onSurfaceVariant, style = MaterialTheme.typography.titleMedium)
+            Text(msg ?: stringResource(R.string.drop_here), color = if (msg != null) cs.error else cs.onSurfaceVariant, style = MaterialTheme.typography.titleMedium)
         }
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             options.forEach { v ->
                 key(v) {
                     DragChip(v, targetRect) { hit ->
-                        if (hit) { if (v == target) finished() else msg = "Not that one" }
+                        if (hit) { if (v == target) finished() else msg = stringResource(R.string.not_that_one) }
                     }
                 }
             }
@@ -193,7 +196,7 @@ private fun AnswerPuzzle(numeric: Boolean, check: (String) -> Boolean, onDone: (
         OutlinedTextField(
             value = text, onValueChange = { text = it; wrong = false },
             singleLine = true, isError = wrong,
-            supportingText = { if (wrong) Text("Not quite, try again") },
+            supportingText = { if (wrong) Text(stringResource(R.string.not_quite)) },
             keyboardOptions = KeyboardOptions(
                 keyboardType = if (numeric) KeyboardType.Number else KeyboardType.Ascii,
                 capitalization = if (numeric) KeyboardCapitalization.None else KeyboardCapitalization.Characters,
@@ -204,7 +207,7 @@ private fun AnswerPuzzle(numeric: Boolean, check: (String) -> Boolean, onDone: (
             shape = RoundedCornerShape(16.dp),
             modifier = Modifier.fillMaxWidth()
         )
-        Button(onClick = submit, modifier = Modifier.fillMaxWidth().height(48.dp)) { Text("Check") }
+        Button(onClick = submit, modifier = Modifier.fillMaxWidth().height(48.dp)) { Text(stringResource(R.string.check)) }
     }
 }
 
@@ -215,7 +218,7 @@ fun MathPuzzle(onDone: () -> Unit) {
     val b = remember { if (mul) (3..12).random() else (11..70).random() }
     val ans = if (mul) a * b else a + b
     AnswerPuzzle(true, { it == ans.toString() }, onDone) {
-        Prompt("Solve")
+        Prompt(stringResource(R.string.prompt_math))
         Text("$a ${if (mul) "×" else "+"} $b", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
     }
 }
@@ -227,7 +230,7 @@ fun CodePuzzle(onDone: () -> Unit) {
         (1..5).map { chars.random() }.joinToString("")
     }
     AnswerPuzzle(false, { it.equals(code, ignoreCase = true) }, onDone) {
-        Prompt("Type this code")
+        Prompt(stringResource(R.string.prompt_code))
         Text(
             code, fontFamily = FontFamily.Monospace, fontSize = 38.sp, letterSpacing = 8.sp,
             fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary
@@ -243,7 +246,7 @@ fun TapPuzzle(onDone: () -> Unit) {
     var next by remember { mutableIntStateOf(1) }
     var msg by remember { mutableStateOf<String?>(null) }
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(14.dp)) {
-        Prompt("Tap the numbers from 1 to 6 in order")
+        Prompt(stringResource(R.string.prompt_tap))
         order.chunked(3).forEach { rowNums ->
             Row(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
                 rowNums.forEach { n ->
@@ -258,7 +261,7 @@ fun TapPuzzle(onDone: () -> Unit) {
                                     if (next > 6) onDone()
                                 } else {
                                     next = 1
-                                    msg = "Wrong order, start again"
+                                    msg = stringResource(R.string.wrong_order)
                                 }
                             },
                         contentAlignment = Alignment.Center

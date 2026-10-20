@@ -2,6 +2,9 @@
 
 package com.jp.applocker
 
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.pluralStringResource
+
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -39,14 +42,14 @@ fun HomeShell(resume: Int, rules: List<Rule>, onAdd: () -> Unit, onEdit: (String
         bottomBar = {
             NavigationBar {
                 NavigationBarItem(selected = tab == 0, onClick = { tab = 0 },
-                    icon = { Icon(Icons.Rounded.Lock, null) }, label = { Text("Locked apps") })
+                    icon = { Icon(Icons.Rounded.Lock, null) }, label = { Text(stringResource(R.string.nav_locked_apps)) })
                 NavigationBarItem(selected = tab == 1, onClick = { tab = 1 },
-                    icon = { Icon(Icons.Rounded.Settings, null) }, label = { Text("Settings") })
+                    icon = { Icon(Icons.Rounded.Settings, null) }, label = { Text(stringResource(R.string.nav_settings)) })
             }
         },
         floatingActionButton = {
             if (tab == 0) ExtendedFloatingActionButton(
-                onClick = onAdd, icon = { Icon(Icons.Rounded.Add, null) }, text = { Text("Add app") })
+                onClick = onAdd, icon = { Icon(Icons.Rounded.Add, null) }, text = { Text(stringResource(R.string.add_app)) })
         }
     ) { pad ->
         if (tab == 0) AppsTab(pad, resume, rules, snack, onEdit) else SettingsTab(pad, resume)
@@ -73,8 +76,8 @@ fun AppsTab(pad: PaddingValues, resume: Int, rules: List<Rule>, snack: SnackbarH
     ) {
         item {
             Column {
-                Text("App Locker", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold)
-                Text("Friction for the apps that eat your time.", style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant)
+                Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold)
+                Text(stringResource(R.string.app_tagline), style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant)
             }
         }
         item {
@@ -89,16 +92,16 @@ fun AppsTab(pad: PaddingValues, resume: Int, rules: List<Rule>, snack: SnackbarH
                     ) { Icon(Icons.Rounded.Shield, null, tint = if (enabled) cs.onPrimary else cs.onSurfaceVariant) }
                     Spacer(Modifier.width(16.dp))
                     Column(Modifier.weight(1f)) {
-                        Text(if (enabled) "Protection is on" else "Protection is off", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                        Text(if (enabled) stringResource(R.string.protection_on) else stringResource(R.string.protection_off), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
                         Text(
-                            if (enabled) "Watching ${rules.size} ${if (rules.size == 1) "app" else "apps"}" else "Turn on to enforce your limits",
+                            if (enabled) "Watching ${rules.size} ${if (rules.size == 1) "app" else "apps"}" else stringResource(R.string.turn_on_limits),
                             style = MaterialTheme.typography.bodySmall
                         )
                     }
                     Switch(checked = enabled, onCheckedChange = { want ->
                         if (want) {
                             if (!Perms.ok(ctx)) {
-                                scope.launch { snack.showSnackbar("Grant the required permissions first") }
+                                scope.launch { snack.showSnackbar(stringResource(R.string.grant_permissions_first)) }
                             } else {
                                 Store.setEnabled(ctx, true); enabled = true
                                 ctx.startForegroundService(Intent(ctx, MonitorService::class.java))
@@ -118,7 +121,7 @@ fun AppsTab(pad: PaddingValues, resume: Int, rules: List<Rule>, snack: SnackbarH
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(Icons.Rounded.Warning, null)
                             Spacer(Modifier.width(10.dp))
-                            Text("Setup needed", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                            Text(stringResource(R.string.setup_needed), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
                         }
                         if (!usageOk) PermissionRow("Usage access", "Lets the app see which app is open", false) { Perms.requestUsage(ctx) }
                         if (!overlayOk) PermissionRow("Display over other apps", "Needed to show the lock screen", false) { Perms.requestOverlay(ctx) }
@@ -136,9 +139,9 @@ fun AppsTab(pad: PaddingValues, resume: Int, rules: List<Rule>, snack: SnackbarH
                         Icon(Icons.Rounded.Apps, null, Modifier.size(40.dp), tint = cs.onSecondaryContainer)
                     }
                     Spacer(Modifier.height(16.dp))
-                    Text("No locked apps yet", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                    Text(stringResource(R.string.no_locked_apps), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
                     Text(
-                        "Tap Add app to pick one and set a daily limit or a schedule.",
+                        stringResource(R.string.no_locked_apps_hint),
                         style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant, textAlign = TextAlign.Center,
                         modifier = Modifier.padding(horizontal = 32.dp, vertical = 6.dp)
                     )
@@ -162,8 +165,8 @@ fun RuleCard(rule: Rule, tick: Int, onClick: () -> Unit) {
     val overLimit = rule.hasLimit && usedSec >= rule.limitMin * 60
     val (status, statusColor) = when {
         grantMs > 0 -> "Unlocked · ${maxOf(1, (grantMs / 60000f).roundToInt())} min left" to cs.tertiary
-        windowOn || overLimit -> "Locked now" to cs.error
-        else -> "Active" to cs.primary
+        windowOn || overLimit -> stringResource(R.string.status_locked_now) to cs.error
+        else -> stringResource(R.string.status_active) to cs.primary
     }
     Card(
         onClick = onClick,
@@ -218,19 +221,19 @@ fun SettingsTab(pad: PaddingValues, resume: Int) {
         Modifier.fillMaxSize().padding(pad).statusBarsPadding().verticalScroll(rememberScrollState()).padding(20.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Text("Settings", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold)
-        SectionCard("Unlock challenge") {
+        Text(stringResource(R.string.nav_settings), style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold)
+        SectionCard(stringResource(R.string.unlock_challenge)) {
             Text(
-                "To open a locked app you solve a random number of puzzles, from 1 up to your maximum.",
+                stringResource(R.string.unlock_challenge_desc),
                 style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant
             )
-            LabeledSlider("Maximum puzzles", "up to ${maxP.roundToInt()}", maxP, 1f..10f, 8) {
+            LabeledSlider(stringResource(R.string.max_puzzles), "up to ${maxP.roundToInt()}", maxP, 1f..10f, 8) {
                 maxP = it; Store.setMaxPuzzles(ctx, it.roundToInt())
             }
-            LabeledSlider("Stays unlocked for", fmtDuration(unlockM.roundToInt()), unlockM, 1f..120f, 118) {
+            LabeledSlider(stringResource(R.string.stays_unlocked_for), fmtDuration(unlockM.roundToInt()), unlockM, 1f..120f, 118) {
                 unlockM = it; Store.setUnlockMin(ctx, it.roundToInt())
             }
-            Text("Puzzle types", style = MaterialTheme.typography.titleSmall)
+            Text(stringResource(R.string.puzzle_types), style = MaterialTheme.typography.titleSmall)
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 PuzzleKinds.forEachIndexed { i, label ->
                     val sel = (mask and (1 shl i)) != 0
@@ -249,17 +252,17 @@ fun SettingsTab(pad: PaddingValues, resume: Int) {
             FilledTonalButton(
                 onClick = {
                     ctx.startActivity(
-                        Intent(ctx, LockActivity::class.java).putExtra("pkg", ctx.packageName).putExtra("reason", "Practice run")
+                        Intent(ctx, LockActivity::class.java).putExtra("pkg", ctx.packageName).putExtra("reason", stringResource(R.string.practice_run))
                     )
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Icon(Icons.Rounded.PlayArrow, null)
                 Spacer(Modifier.width(8.dp))
-                Text("Try a puzzle")
+                Text(stringResource(R.string.try_a_puzzle))
             }
         }
-        SectionCard("Permissions") {
+        SectionCard(stringResource(R.string.permissions_section)) {
             PermissionRow("Usage access", "See which app is in the foreground", usageOk) { Perms.requestUsage(ctx) }
             PermissionRow("Display over other apps", "Show the lock screen on top", overlayOk) { Perms.requestOverlay(ctx) }
             PermissionRow("Notifications", "Show the running status", notifOk) {
@@ -268,7 +271,7 @@ fun SettingsTab(pad: PaddingValues, resume: Int) {
             PermissionRow("Unrestricted battery", "Keeps protection from being killed", batteryOk) { Perms.requestBattery(ctx) }
         }
         Text(
-            "App Locker 2.0 · limits reset at midnight",
+            stringResource(R.string.version_footer),
             style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant,
             modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center
         )

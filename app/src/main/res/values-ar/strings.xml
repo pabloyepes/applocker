@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Locker</string>
+    <string name="app_tagline">احتكاك للتطبيقات التي تلتهم وقتك.</string>
+    <string name="version_footer">App Locker 2.0 · تُعاد الحدود عند منتصف الليل</string>
+
+    <string name="nav_locked_apps">التطبيقات المقفلة</string>
+    <string name="nav_settings">الإعدادات</string>
+    <string name="add_app">إضافة تطبيق</string>
+    <string name="back">رجوع</string>
+    <string name="clear">مسح</string>
+    <string name="save">حفظ</string>
+    <string name="cancel">إلغاء</string>
+    <string name="ok">موافق</string>
+    <string name="grant">منح</string>
+    <string name="check">تحقق</string>
+    <string name="go_back">العودة</string>
+
+    <string name="protection_on">الحماية مفعّلة</string>
+    <string name="protection_off">الحماية معطّلة</string>
+    <string name="turn_on_limits">فعّل لتطبيق حدودك</string>
+    <string name="grant_permissions_first">امنح الأذونات المطلوبة أولاً</string>
+    <plurals name="watching_apps">
+        <item quantity="zero">مراقبة %d تطبيقات</item>
+        <item quantity="one">مراقبة تطبيق واحد</item>
+        <item quantity="two">مراقبة تطبيقين</item>
+        <item quantity="few">مراقبة %d تطبيقات</item>
+        <item quantity="many">مراقبة %d تطبيقاً</item>
+        <item quantity="other">مراقبة %d تطبيق</item>
+    </plurals>
+
+    <string name="setup_needed">يلزم الإعداد</string>
+    <string name="perm_usage">الوصول إلى بيانات الاستخدام</string>
+    <string name="perm_usage_desc">يتيح رؤية التطبيق المفتوح حالياً</string>
+    <string name="perm_usage_desc_settings">رؤية التطبيق في المقدمة</string>
+    <string name="perm_overlay">العرض فوق التطبيقات الأخرى</string>
+    <string name="perm_overlay_desc">مطلوب لعرض شاشة القفل</string>
+    <string name="perm_overlay_desc_settings">عرض شاشة القفل فوقها</string>
+    <string name="perm_notifications">الإشعارات</string>
+    <string name="perm_notifications_desc">يعرض حالة التشغيل</string>
+    <string name="perm_notifications_desc_settings">عرض حالة التشغيل</string>
+    <string name="perm_battery">البطارية غير مقيدة</string>
+    <string name="perm_battery_desc">يمنع إيقاف الحماية</string>
+    <string name="permissions_section">الأذونات</string>
+
+    <string name="no_locked_apps">لا توجد تطبيقات مقفلة بعد</string>
+    <string name="no_locked_apps_hint">اضغط على «إضافة تطبيق» لاختيار واحد وتعيين حد يومي أو جدول زمني.</string>
+
+    <string name="status_unlocked">مفتوح · تبقى %d دقيقة</string>
+    <string name="status_locked_now">مقفل الآن</string>
+    <string name="status_active">نشط</string>
+    <string name="limit_per_day">%1$s / يوم</string>
+    <string name="used_today">%1$d من %2$s مستخدمة اليوم</string>
+
+    <string name="settings">الإعدادات</string>
+    <string name="unlock_challenge">تحدي فتح القفل</string>
+    <string name="unlock_challenge_desc">لفتح تطبيق مقفل تحل عدداً عشوائياً من الألغاز، من 1 حتى الحد الأقصى.</string>
+    <string name="max_puzzles">الحد الأقصى للألغاز</string>
+    <string name="up_to_n">حتى %d</string>
+    <string name="stays_unlocked_for">يبقى مفتوحاً لمدة</string>
+    <string name="puzzle_types">أنواع الألغاز</string>
+    <string name="try_a_puzzle">جرّب لغزاً</string>
+    <string name="practice_run">تدريب</string>
+
+    <string name="puzzle_sort">ترتيب</string>
+    <string name="puzzle_drag_drop">سحب وإفلات</string>
+    <string name="puzzle_math">رياضيات</string>
+    <string name="puzzle_tap_order">ترتيب النقر</string>
+    <string name="puzzle_code">رمز</string>
+
+    <string name="new_rule">قاعدة جديدة</string>
+    <string name="edit_rule">تعديل القاعدة</string>
+    <string name="remove">إزالة</string>
+    <string name="daily_limit">الحد اليومي</string>
+    <string name="daily_limit_desc">القفل بعد وقت محدد كل يوم</string>
+    <string name="block_by_schedule">الحظر حسب الجدول</string>
+    <string name="block_by_schedule_desc">القفل خلال ساعات معينة</string>
+    <string name="from">من</string>
+    <string name="until">إلى</string>
+    <string name="on_days">في الأيام</string>
+    <string name="block_from">الحظر من</string>
+    <string name="block_until">الحظر حتى</string>
+    <string name="pick_different_times">اختر أوقات بداية ونهاية مختلفة.</string>
+    <string name="choose_at_least_one_day">اختر يوماً واحداً على الأقل.</string>
+    <string name="blocked_overnight">محظور من %1$s إلى %2$s صباح اليوم التالي · %3$s</string>
+    <string name="blocked_range">محظور من %1$s إلى %2$s · %3$s</string>
+
+    <string name="day_mon">الإثنين</string>
+    <string name="day_tue">الثلاثاء</string>
+    <string name="day_wed">الأربعاء</string>
+    <string name="day_thu">الخميس</string>
+    <string name="day_fri">الجمعة</string>
+    <string name="day_sat">السبت</string>
+    <string name="day_sun">الأحد</string>
+    <string name="day_letter_m">ن</string>
+    <string name="day_letter_t">ث</string>
+    <string name="day_letter_w">ر</string>
+    <string name="day_letter_f">ج</string>
+    <string name="day_letter_s">س</string>
+    <string name="every_day">كل يوم</string>
+    <string name="weekdays">أيام العمل</string>
+    <string name="weekends">عطلة نهاية الأسبوع</string>
+
+    <string name="min_short">%d دقيقة</string>
+    <string name="hour_short">%d ساعة</string>
+    <string name="hour_min_short">%1$d ساعة %2$d دقيقة</string>
+
+    <string name="search_apps">البحث عن تطبيقات</string>
+    <string name="no_apps_match">لا توجد تطبيقات تطابق «%s»</string>
+    <string name="already_locked">مقفل مسبقاً</string>
+
+    <string name="is_locked">%s مقفل</string>
+    <string name="solve_puzzles_one">حل لغزاً واحداً للمتابعة</string>
+    <string name="solve_puzzles_many">حل %d ألغاز للمتابعة</string>
+    <string name="puzzle_of">لغز %1$d من %2$d</string>
+
+    <string name="prompt_sort">اسحب البلاطات بالترتيب من الأصغر إلى الأكبر</string>
+    <string name="prompt_drop">اسحب الرقم %d إلى المربع</string>
+    <string name="drop_here">أفلت هنا</string>
+    <string name="not_that_one">ليس هذا</string>
+    <string name="prompt_math">حل</string>
+    <string name="prompt_code">اكتب هذا الرمز</string>
+    <string name="prompt_tap">انقر الأرقام من 1 إلى 6 بالترتيب</string>
+    <string name="wrong_order">ترتيب خاطئ، ابدأ من جديد</string>
+    <string name="not_quite">ليس صحيحاً، حاول مرة أخرى</string>
+
+    <string name="reason_blocked_until">محظور حتى %s</string>
+    <string name="reason_daily_limit">تم الوصول إلى الحد اليومي · %s</string>
+
+    <string name="notif_channel">App Locker</string>
+    <string name="notif_title">App Locker نشط</string>
+    <plurals name="notif_watching">
+        <item quantity="zero">مراقبة %d تطبيقات</item>
+        <item quantity="one">مراقبة تطبيق واحد</item>
+        <item quantity="two">مراقبة تطبيقين</item>
+        <item quantity="few">مراقبة %d تطبيقات</item>
+        <item quantity="many">مراقبة %d تطبيقاً</item>
+        <item quantity="other">مراقبة %d تطبيق</item>
+    </plurals>
+</resources>

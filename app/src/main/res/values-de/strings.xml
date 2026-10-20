@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Locker</string>
+    <string name="app_tagline">Reibung für die Apps, die deine Zeit fressen.</string>
+    <string name="version_footer">App Locker 2.0 · Limits werden um Mitternacht zurückgesetzt</string>
+
+    <string name="nav_locked_apps">Gesperrte Apps</string>
+    <string name="nav_settings">Einstellungen</string>
+    <string name="add_app">App hinzufügen</string>
+    <string name="back">Zurück</string>
+    <string name="clear">Löschen</string>
+    <string name="save">Speichern</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="ok">OK</string>
+    <string name="grant">Erlauben</string>
+    <string name="check">Prüfen</string>
+    <string name="go_back">Zurück</string>
+
+    <string name="protection_on">Schutz ist aktiv</string>
+    <string name="protection_off">Schutz ist aus</string>
+    <string name="turn_on_limits">Einschalten, um deine Limits durchzusetzen</string>
+    <string name="grant_permissions_first">Erteile zuerst die erforderlichen Berechtigungen</string>
+    <plurals name="watching_apps">
+        <item quantity="one">Überwache %d App</item>
+        <item quantity="other">Überwache %d Apps</item>
+    </plurals>
+
+    <string name="setup_needed">Einrichtung erforderlich</string>
+    <string name="perm_usage">Nutzungszugriff</string>
+    <string name="perm_usage_desc">Ermöglicht zu sehen, welche App geöffnet ist</string>
+    <string name="perm_usage_desc_settings">Sehen, welche App im Vordergrund ist</string>
+    <string name="perm_overlay">Über anderen Apps einblenden</string>
+    <string name="perm_overlay_desc">Erforderlich, um den Sperrbildschirm anzuzeigen</string>
+    <string name="perm_overlay_desc_settings">Sperrbildschirm darüber anzeigen</string>
+    <string name="perm_notifications">Benachrichtigungen</string>
+    <string name="perm_notifications_desc">Zeigt den Ausführungsstatus</string>
+    <string name="perm_notifications_desc_settings">Ausführungsstatus anzeigen</string>
+    <string name="perm_battery">Uneingeschränkter Akku</string>
+    <string name="perm_battery_desc">Verhindert, dass der Schutz beendet wird</string>
+    <string name="permissions_section">Berechtigungen</string>
+
+    <string name="no_locked_apps">Noch keine gesperrten Apps</string>
+    <string name="no_locked_apps_hint">Tippe auf App hinzufügen, um eine auszuwählen und ein Tageslimit oder einen Zeitplan festzulegen.</string>
+
+    <string name="status_unlocked">Entsperrt · noch %d Min.</string>
+    <string name="status_locked_now">Jetzt gesperrt</string>
+    <string name="status_active">Aktiv</string>
+    <string name="limit_per_day">%1$s / Tag</string>
+    <string name="used_today">%1$d von %2$s heute verbraucht</string>
+
+    <string name="settings">Einstellungen</string>
+    <string name="unlock_challenge">Entsperr-Herausforderung</string>
+    <string name="unlock_challenge_desc">Um eine gesperrte App zu öffnen, löst du eine zufällige Anzahl von Puzzles, von 1 bis zu deinem Maximum.</string>
+    <string name="max_puzzles">Maximale Puzzles</string>
+    <string name="up_to_n">bis zu %d</string>
+    <string name="stays_unlocked_for">Bleibt entsperrt für</string>
+    <string name="puzzle_types">Puzzle-Typen</string>
+    <string name="try_a_puzzle">Puzzle ausprobieren</string>
+    <string name="practice_run">Übung</string>
+
+    <string name="puzzle_sort">Sortieren</string>
+    <string name="puzzle_drag_drop">Ziehen &amp; Ablegen</string>
+    <string name="puzzle_math">Mathe</string>
+    <string name="puzzle_tap_order">Tipp-Reihenfolge</string>
+    <string name="puzzle_code">Code</string>
+
+    <string name="new_rule">Neue Regel</string>
+    <string name="edit_rule">Regel bearbeiten</string>
+    <string name="remove">Entfernen</string>
+    <string name="daily_limit">Tageslimit</string>
+    <string name="daily_limit_desc">Nach einer bestimmten Zeit pro Tag sperren</string>
+    <string name="block_by_schedule">Nach Zeitplan sperren</string>
+    <string name="block_by_schedule_desc">Zu bestimmten Stunden sperren</string>
+    <string name="from">Von</string>
+    <string name="until">Bis</string>
+    <string name="on_days">An Tagen</string>
+    <string name="block_from">Sperren ab</string>
+    <string name="block_until">Sperren bis</string>
+    <string name="pick_different_times">Wähle unterschiedliche Start- und Endzeiten.</string>
+    <string name="choose_at_least_one_day">Wähle mindestens einen Tag.</string>
+    <string name="blocked_overnight">Gesperrt von %1$s bis %2$s am nächsten Morgen · %3$s</string>
+    <string name="blocked_range">Gesperrt von %1$s bis %2$s · %3$s</string>
+
+    <string name="day_mon">Mo</string>
+    <string name="day_tue">Di</string>
+    <string name="day_wed">Mi</string>
+    <string name="day_thu">Do</string>
+    <string name="day_fri">Fr</string>
+    <string name="day_sat">Sa</string>
+    <string name="day_sun">So</string>
+    <string name="day_letter_m">M</string>
+    <string name="day_letter_t">D</string>
+    <string name="day_letter_w">M</string>
+    <string name="day_letter_f">F</string>
+    <string name="day_letter_s">S</string>
+    <string name="every_day">Jeden Tag</string>
+    <string name="weekdays">Wochentage</string>
+    <string name="weekends">Wochenende</string>
+
+    <string name="min_short">%d Min.</string>
+    <string name="hour_short">%d Std.</string>
+    <string name="hour_min_short">%1$d Std. %2$d Min.</string>
+
+    <string name="search_apps">Apps suchen</string>
+    <string name="no_apps_match">Keine Apps passen zu „%s“</string>
+    <string name="already_locked">Bereits gesperrt</string>
+
+    <string name="is_locked">%s ist gesperrt</string>
+    <string name="solve_puzzles_one">Löse 1 Puzzle, um fortzufahren</string>
+    <string name="solve_puzzles_many">Löse %d Puzzles, um fortzufahren</string>
+    <string name="puzzle_of">Puzzle %1$d von %2$d</string>
+
+    <string name="prompt_sort">Ziehe die Kacheln in die Reihenfolge, vom kleinsten zum größten</string>
+    <string name="prompt_drop">Ziehe die Zahl %d in das Feld</string>
+    <string name="drop_here">Hier ablegen</string>
+    <string name="not_that_one">Nicht die</string>
+    <string name="prompt_math">Löse</string>
+    <string name="prompt_code">Gib diesen Code ein</string>
+    <string name="prompt_tap">Tippe die Zahlen von 1 bis 6 in der Reihenfolge</string>
+    <string name="wrong_order">Falsche Reihenfolge, fang von vorne an</string>
+    <string name="not_quite">Nicht ganz, versuch es nochmal</string>
+
+    <string name="reason_blocked_until">Gesperrt bis %s</string>
+    <string name="reason_daily_limit">Tageslimit erreicht · %s</string>
+
+    <string name="notif_channel">App Locker</string>
+    <string name="notif_title">App Locker ist aktiv</string>
+    <plurals name="notif_watching">
+        <item quantity="one">Überwache %d App</item>
+        <item quantity="other">Überwache %d Apps</item>
+    </plurals>
+</resources>

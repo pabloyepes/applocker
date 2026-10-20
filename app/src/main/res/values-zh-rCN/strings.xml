@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Locker</string>
+    <string name="app_tagline">给耗时的应用加点阻力。</string>
+    <string name="version_footer">App Locker 2.0 · 限制在午夜重置</string>
+
+    <string name="nav_locked_apps">已锁定应用</string>
+    <string name="nav_settings">设置</string>
+    <string name="add_app">添加应用</string>
+    <string name="back">返回</string>
+    <string name="clear">清除</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
+    <string name="grant">授予</string>
+    <string name="check">检查</string>
+    <string name="go_back">返回</string>
+
+    <string name="protection_on">保护已开启</string>
+    <string name="protection_off">保护已关闭</string>
+    <string name="turn_on_limits">开启以强制执行限制</string>
+    <string name="grant_permissions_first">请先授予所需权限</string>
+    <plurals name="watching_apps">
+        <item quantity="other">正在监控 %d 个应用</item>
+    </plurals>
+
+    <string name="setup_needed">需要设置</string>
+    <string name="perm_usage">使用情况访问权限</string>
+    <string name="perm_usage_desc">可查看当前打开的应用</string>
+    <string name="perm_usage_desc_settings">查看前台应用</string>
+    <string name="perm_overlay">显示在其他应用上层</string>
+    <string name="perm_overlay_desc">显示锁定屏幕所需</string>
+    <string name="perm_overlay_desc_settings">在上层显示锁定屏幕</string>
+    <string name="perm_notifications">通知</string>
+    <string name="perm_notifications_desc">显示运行状态</string>
+    <string name="perm_notifications_desc_settings">显示运行状态</string>
+    <string name="perm_battery">不受限制的电池优化</string>
+    <string name="perm_battery_desc">防止保护被系统终止</string>
+    <string name="permissions_section">权限</string>
+
+    <string name="no_locked_apps">还没有锁定任何应用</string>
+    <string name="no_locked_apps_hint">点击“添加应用”选择一个应用并设置每日限制或时间表。</string>
+
+    <string name="status_unlocked">已解锁 · 剩余 %d 分钟</string>
+    <string name="status_locked_now">当前已锁定</string>
+    <string name="status_active">生效中</string>
+    <string name="limit_per_day">%1$s / 天</string>
+    <string name="used_today">今天已用 %1$d / %2$s</string>
+
+    <string name="settings">设置</string>
+    <string name="unlock_challenge">解锁挑战</string>
+    <string name="unlock_challenge_desc">打开被锁定的应用时，需要解决 1 到最大数量之间随机数量的谜题。</string>
+    <string name="max_puzzles">最大谜题数</string>
+    <string name="up_to_n">最多 %d 个</string>
+    <string name="stays_unlocked_for">保持解锁时长</string>
+    <string name="puzzle_types">谜题类型</string>
+    <string name="try_a_puzzle">试玩谜题</string>
+    <string name="practice_run">练习</string>
+
+    <string name="puzzle_sort">排序</string>
+    <string name="puzzle_drag_drop">拖放</string>
+    <string name="puzzle_math">数学</string>
+    <string name="puzzle_tap_order">点击顺序</string>
+    <string name="puzzle_code">代码</string>
+
+    <string name="new_rule">新规则</string>
+    <string name="edit_rule">编辑规则</string>
+    <string name="remove">删除</string>
+    <string name="daily_limit">每日限制</string>
+    <string name="daily_limit_desc">每天使用一定时间后锁定</string>
+    <string name="block_by_schedule">按时间表屏蔽</string>
+    <string name="block_by_schedule_desc">在特定时间锁定</string>
+    <string name="from">从</string>
+    <string name="until">至</string>
+    <string name="on_days">星期</string>
+    <string name="block_from">屏蔽开始</string>
+    <string name="block_until">屏蔽结束</string>
+    <string name="pick_different_times">请选择不同的开始和结束时间。</string>
+    <string name="choose_at_least_one_day">请至少选择一天。</string>
+    <string name="blocked_overnight">从 %1$s 屏蔽至次日早上 %2$s · %3$s</string>
+    <string name="blocked_range">从 %1$s 屏蔽至 %2$s · %3$s</string>
+
+    <string name="day_mon">一</string>
+    <string name="day_tue">二</string>
+    <string name="day_wed">三</string>
+    <string name="day_thu">四</string>
+    <string name="day_fri">五</string>
+    <string name="day_sat">六</string>
+    <string name="day_sun">日</string>
+    <string name="day_letter_m">一</string>
+    <string name="day_letter_t">二</string>
+    <string name="day_letter_w">三</string>
+    <string name="day_letter_f">五</string>
+    <string name="day_letter_s">六</string>
+    <string name="every_day">每天</string>
+    <string name="weekdays">工作日</string>
+    <string name="weekends">周末</string>
+
+    <string name="min_short">%d 分钟</string>
+    <string name="hour_short">%d 小时</string>
+    <string name="hour_min_short">%1$d 小时 %2$d 分钟</string>
+
+    <string name="search_apps">搜索应用</string>
+    <string name="no_apps_match">没有匹配“%s”的应用</string>
+    <string name="already_locked">已锁定</string>
+
+    <string name="is_locked">%s 已锁定</string>
+    <string name="solve_puzzles_one">解决 1 个谜题以继续</string>
+    <string name="solve_puzzles_many">解决 %d 个谜题以继续</string>
+    <string name="puzzle_of">谜题 %1$d / %2$d</string>
+
+    <string name="prompt_sort">将方块从小到大拖拽排序</string>
+    <string name="prompt_drop">将数字 %d 拖到方框中</string>
+    <string name="drop_here">拖放到这里</string>
+    <string name="not_that_one">不是这个</string>
+    <string name="prompt_math">请计算</string>
+    <string name="prompt_code">输入此代码</string>
+    <string name="prompt_tap">按顺序点击 1 到 6</string>
+    <string name="wrong_order">顺序错误，请重新开始</string>
+    <string name="not_quite">不对，请再试一次</string>
+
+    <string name="reason_blocked_until">屏蔽至 %s</string>
+    <string name="reason_daily_limit">已达每日限制 · %s</string>
+
+    <string name="notif_channel">App Locker</string>
+    <string name="notif_title">App Locker 正在运行</string>
+    <plurals name="notif_watching">
+        <item quantity="other">正在监控 %d 个应用</item>
+    </plurals>
+</resources>
