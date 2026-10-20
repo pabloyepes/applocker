@@ -125,9 +125,9 @@ fun AppsTab(pad: PaddingValues, resume: Int, rules: List<Rule>, snack: SnackbarH
                             Spacer(Modifier.width(10.dp))
                             Text(stringResource(R.string.setup_needed), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
                         }
-                        if (!usageOk) PermissionRow("Usage access", "Lets the app see which app is open", false) { Perms.requestUsage(ctx) }
-                        if (!overlayOk) PermissionRow("Display over other apps", "Needed to show the lock screen", false) { Perms.requestOverlay(ctx) }
-                        if (!notifOk) PermissionRow("Notifications", "Shows the running status", false) {
+                        if (!usageOk) PermissionRow(stringResource(R.string.perm_usage), stringResource(R.string.perm_usage_desc), false) { Perms.requestUsage(ctx) }
+                        if (!overlayOk) PermissionRow(stringResource(R.string.perm_overlay), stringResource(R.string.perm_overlay_desc), false) { Perms.requestOverlay(ctx) }
+                        if (!notifOk) PermissionRow(stringResource(R.string.perm_notifications), stringResource(R.string.perm_notifications_desc), false) {
                             notifLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
                         }
                     }
@@ -267,12 +267,12 @@ fun SettingsTab(pad: PaddingValues, resume: Int) {
             }
         }
         SectionCard(stringResource(R.string.permissions_section)) {
-            PermissionRow("Usage access", "See which app is in the foreground", usageOk) { Perms.requestUsage(ctx) }
-            PermissionRow("Display over other apps", "Show the lock screen on top", overlayOk) { Perms.requestOverlay(ctx) }
-            PermissionRow("Notifications", "Show the running status", notifOk) {
+            PermissionRow(stringResource(R.string.perm_usage), stringResource(R.string.perm_usage_desc_settings), usageOk) { Perms.requestUsage(ctx) }
+            PermissionRow(stringResource(R.string.perm_overlay), stringResource(R.string.perm_overlay_desc_settings), overlayOk) { Perms.requestOverlay(ctx) }
+            PermissionRow(stringResource(R.string.perm_notifications), stringResource(R.string.perm_notifications_desc_settings), notifOk) {
                 notifLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
             }
-            PermissionRow("Unrestricted battery", "Keeps protection from being killed", batteryOk) { Perms.requestBattery(ctx) }
+            PermissionRow(stringResource(R.string.perm_battery), stringResource(R.string.perm_battery_desc), batteryOk) { Perms.requestBattery(ctx) }
         }
         Text(
             stringResource(R.string.version_footer),

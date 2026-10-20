@@ -124,7 +124,7 @@ fun PermissionRow(title: String, desc: String, granted: Boolean, onGrant: () -> 
         }
         Spacer(Modifier.width(12.dp))
         if (granted) Icon(Icons.Rounded.CheckCircle, "Granted", tint = MaterialTheme.colorScheme.primary)
-        else FilledTonalButton(onClick = onGrant) { Text("Grant") }
+        else FilledTonalButton(onClick = onGrant) { Text(stringResource(R.string.grant)) }
     }
 }
 
