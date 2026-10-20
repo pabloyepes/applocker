@@ -1,5 +1,7 @@
 package com.jp.applocker
 
+import androidx.compose.ui.res.stringResource
+
 import android.Manifest
 import android.app.AppOpsManager
 import android.content.Context
