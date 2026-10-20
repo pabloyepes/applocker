@@ -68,6 +68,8 @@ fun AppsTab(pad: PaddingValues, resume: Int, rules: List<Rule>, snack: SnackbarH
     val overlayOk = remember(resume) { Perms.overlay(ctx) }
     val notifOk = remember(resume) { Perms.notif(ctx) }
     val notifLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { }
+    val practiceRun = stringResource(R.string.practice_run)
+    val grantPermsMsg = stringResource(R.string.grant_permissions_first)
 
     LazyColumn(
         Modifier.fillMaxSize().padding(pad).statusBarsPadding(),
@@ -101,7 +103,7 @@ fun AppsTab(pad: PaddingValues, resume: Int, rules: List<Rule>, snack: SnackbarH
                     Switch(checked = enabled, onCheckedChange = { want ->
                         if (want) {
                             if (!Perms.ok(ctx)) {
-                                scope.launch { snack.showSnackbar(stringResource(R.string.grant_permissions_first)) }
+                                scope.launch { snack.showSnackbar(grantPermsMsg) }
                             } else {
                                 Store.setEnabled(ctx, true); enabled = true
                                 ctx.startForegroundService(Intent(ctx, MonitorService::class.java))
@@ -216,6 +218,8 @@ fun SettingsTab(pad: PaddingValues, resume: Int) {
     val notifOk = remember(resume) { Perms.notif(ctx) }
     val batteryOk = remember(resume) { Perms.battery(ctx) }
     val notifLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { }
+    val practiceRun = stringResource(R.string.practice_run)
+    val grantPermsMsg = stringResource(R.string.grant_permissions_first)
 
     Column(
         Modifier.fillMaxSize().padding(pad).statusBarsPadding().verticalScroll(rememberScrollState()).padding(20.dp),
@@ -252,7 +256,7 @@ fun SettingsTab(pad: PaddingValues, resume: Int) {
             FilledTonalButton(
                 onClick = {
                     ctx.startActivity(
-                        Intent(ctx, LockActivity::class.java).putExtra("pkg", ctx.packageName).putExtra("reason", stringResource(R.string.practice_run))
+                        Intent(ctx, LockActivity::class.java).putExtra("pkg", ctx.packageName).putExtra("reason", practiceRun)
                     )
                 },
                 modifier = Modifier.fillMaxWidth()

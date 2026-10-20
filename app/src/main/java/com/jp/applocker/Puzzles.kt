@@ -121,6 +121,9 @@ fun DropPuzzle(onDone: () -> Unit) {
     val options = remember { ((10..99).filter { it != target }.shuffled().take(3) + target).shuffled() }
     var targetRect by remember { mutableStateOf(Rect.Zero) }
     var msg by remember { mutableStateOf<String?>(null) }
+    val wrongOrder = stringResource(R.string.wrong_order)
+    val notThatOne = stringResource(R.string.not_that_one)
+    val dropHere = stringResource(R.string.drop_here)
     val finished by rememberUpdatedState(onDone)
 
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(20.dp)) {
@@ -133,13 +136,13 @@ fun DropPuzzle(onDone: () -> Unit) {
                 .border(2.dp, if (msg != null) cs.error else cs.primary, RoundedCornerShape(22.dp)),
             contentAlignment = Alignment.Center
         ) {
-            Text(msg ?: stringResource(R.string.drop_here), color = if (msg != null) cs.error else cs.onSurfaceVariant, style = MaterialTheme.typography.titleMedium)
+            Text(msg ?: dropHere, color = if (msg != null) cs.error else cs.onSurfaceVariant, style = MaterialTheme.typography.titleMedium)
         }
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             options.forEach { v ->
                 key(v) {
                     DragChip(v, targetRect) { hit ->
-                        if (hit) { if (v == target) finished() else msg = stringResource(R.string.not_that_one) }
+                        if (hit) { if (v == target) finished() else msg = notThatOne }
                     }
                 }
             }
@@ -245,6 +248,9 @@ fun TapPuzzle(onDone: () -> Unit) {
     val order = remember { (1..6).shuffled() }
     var next by remember { mutableIntStateOf(1) }
     var msg by remember { mutableStateOf<String?>(null) }
+    val wrongOrder = stringResource(R.string.wrong_order)
+    val notThatOne = stringResource(R.string.not_that_one)
+    val dropHere = stringResource(R.string.drop_here)
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Prompt(stringResource(R.string.prompt_tap))
         order.chunked(3).forEach { rowNums ->
@@ -261,7 +267,7 @@ fun TapPuzzle(onDone: () -> Unit) {
                                     if (next > 6) onDone()
                                 } else {
                                     next = 1
-                                    msg = stringResource(R.string.wrong_order)
+                                    msg = wrongOrder
                                 }
                             },
                         contentAlignment = Alignment.Center
